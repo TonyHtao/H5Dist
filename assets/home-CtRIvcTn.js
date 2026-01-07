@@ -1,1 +1,0 @@
-import{a as e}from"./request-h65uDk9c.js";const o=()=>e({url:"xkx/pc_common",method:"post"}),r=s=>e({url:"xkx/search_business_es",method:"get",params:s}),n=s=>e({url:"xkx/login",method:"post",data:s});export{r as a,o as g,n as l};
