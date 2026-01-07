@@ -1,0 +1,13 @@
+# Netlify 反向代理配置
+# 方案1：使用 _redirects（可能不支持 POST/PUT/DELETE 等方法）
+# /api/*  https://sys.shijiyunhai.cn/api/:splat  200!
+
+# 方案2：使用 Edge Function（推荐，支持所有 HTTP 方法）
+# Edge Function 配置在 netlify.toml 和 netlify/edge-functions/proxy.ts
+# 需要在 Netlify 控制台配置 Edge Function 路由：/api/* -> proxy
+
+# Vue Router history 模式支持（SPA 路由）
+# 所有非文件请求都返回 index.html，让前端路由处理
+# 注意：这个规则必须在 /api/* 之后，避免拦截 API 请求
+/*    /index.html   200
+
