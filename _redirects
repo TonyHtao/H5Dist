@@ -1,0 +1,10 @@
+# Netlify 反向代理配置
+# 将 /api/* 请求代理到后端接口（保留 /api 路径）
+# 前端请求：/api/xkx/search_business_es
+# Netlify 转发到：https://sys.shijiyunhai.cn/api/xkx/search_business_es
+/api/*  https://sys.shijiyunhai.cn/api/:splat  200!
+
+# Vue Router history 模式支持（SPA 路由）
+# 所有非文件请求都返回 index.html，让前端路由处理
+/*    /index.html   200
+
